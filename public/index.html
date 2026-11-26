@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Project</title>
+</head>
+<body>
+
+    <h1>My Cloud Application</h1>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showMessage() {
+            fetch('/api/message')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('result').innerHTML = data;
+            });
+        }
+    </script>
+
+</body>
+</html>
